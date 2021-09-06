@@ -1,3 +1,5 @@
+// import 'dart:html';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -5,27 +7,46 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
- @override
+
+  // This widget is the root of your application.
+ 
+  @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        primaryColor: Colors.amber,  
+        scaffoldBackgroundColor: Colors.grey[700],
+        primaryColor: Colors.grey[850],
+        accentColor: Colors.tealAccent[400],
+        textTheme: TextTheme(
+          bodyText2: TextStyle(color: Colors.cyanAccent),
+        ),
       ),
-      initialRoute: '/fourth',
+      initialRoute: '/5',
       routes: <String, WidgetBuilder> {
-       '/first': (context) => FirstPage(),
-       '/second': (context) => SecondPage(),
-       '/third': (context) => ThirdPage(),
-       '/fourth': (context) => FourthPage(),
-       }
+        '/1': (context) => FirstPage(),
+        '/2': (context) => SecondPage(),
+        '/3': (context) => ThirdPage(),
+        '/4': (context) => FourthPage(),
+        '/5': (context) => FifthPage(),
+        '/6': (context) => SixthPage(),
+      }
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key? key, required this.title}) : super(key: key);
+
+ // This widget is the home page of your application. It is stateful, meaning
+  // that it has a State object (defined below) that contains fields that affect
+  // how it looks.
+
+  // This class is the configuration for the state. It holds the values (in this
+  // case the title) provided by the parent (in this case the App widget) and
+  // used by the build method of the State. Fields in a Widget subclass are
+  // always marked "final".
+
   final String title;
 
   @override
@@ -68,6 +89,10 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+
+        // Here we take the value from the MyHomePage object that was created by
+        // the App.build method, and use it to set our appbar title.
+        
         title: Text(widget.title),
       ),
       body: Center(
@@ -184,21 +209,21 @@ class SecondPage extends StatelessWidget{
                     Container(
                       child: Center(child: Text('No.')),
                       decoration: BoxDecoration(
-                        color: Colors.green,
+                        color: Colors.grey[850],
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                     ),
                     Container(
                       child: Center(child: Text('Name')),
                       decoration: BoxDecoration(
-                        color: Colors.green,
+                        color: Colors.grey[850],
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                     ),
                     Container(
                       child: Center(child: Text('Gender')),
                       decoration: BoxDecoration(
-                        color: Colors.green,
+                        color: Colors.grey[850],
                         borderRadius: BorderRadius.circular(10.0),
                       ),
                     ),
@@ -253,13 +278,19 @@ class ThirdPage extends StatelessWidget{
         body: TabBarView(
           children: [
             Center(
-              child: Text('Cloud'),
+              child: Text('Cloud',
+              style: TextStyle(height: 1, fontSize: 50),
+              ), 
+           ),
+            Center(
+              child: Text('Umbrella',
+              style: TextStyle(height: 1, fontSize: 50),
+              ),
             ),
             Center(
-              child: Text('Umbrella'),
-            ),
-            Center(
-              child: Text('Sunny'),
+              child: Text('Sunny',
+              style: TextStyle(height: 1, fontSize: 50),
+              ),
             ),
           ],
         ),
@@ -284,13 +315,141 @@ class FourthPage extends StatelessWidget{
         itemBuilder: (context, index) {
           return Container(
             height: 50,
-            color: Colors.amber[colorCodes[index % 3]],
+            color: Colors.cyan[colorCodes[index % 3]],
             child: Center(
-              child: Text('Entry ${entries[index]}'),
+              child: Text('Entry ${entries[index]}',
+              style: TextStyle(color: Colors.black),
+              ),
             ),
           );
         },
         separatorBuilder: (context, index) => Divider(),
+      ),
+    );
+  }
+}
+
+
+class FifthPage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Grid View'),
+      ),
+      body: GridView.count(
+        crossAxisCount: 2,
+        children: List.generate(6, (index) {
+          return InkWell(
+            onTap: (){
+              Navigator.pushNamed(context, '/${index+1}');
+              // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              //   content: Text('Tap at $index'),
+              // ));
+            },
+            child: Container(
+              margin: EdgeInsets.all(20.0),
+              decoration: BoxDecoration(
+                color: Theme.of(context).accentColor,
+                borderRadius: BorderRadius.circular(8.0),
+              ),
+              child: Center(
+                child: Text(
+                  'Page ${index+1}',
+                  style: Theme.of(context).textTheme.headline5,
+                ),
+              ),
+            ),
+          );
+        }),
+      ),
+    );
+  }
+}
+
+class SixthPage extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('First Form'),
+      ),
+      body: MyCustomForm(),
+    );
+  }
+}
+
+class MyCustomForm extends StatefulWidget{
+  @override
+  _MyCustomFormState createState() => _MyCustomFormState();
+}
+
+class _MyCustomFormState extends State<MyCustomForm> {
+  final _formKey = GlobalKey<FormState>();
+
+  @override
+  Widget build(BuildContext context) {
+    return Form(
+      key: _formKey,
+      child: Column(
+        children: [
+          TextFormField(
+            decoration: InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: 'Enter your firstname',
+              labelStyle: TextStyle(color: Colors.white)
+            ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter firstname.';
+              }
+
+              return null;
+            },
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: 'Enter your lastname',
+              labelStyle: TextStyle(color: Colors.white)
+            ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter lastname.';
+              }
+
+              return null;
+            },
+          ),
+          TextFormField(
+            decoration: InputDecoration(
+              border: UnderlineInputBorder(),
+              labelText: 'Enter your age',
+              labelStyle: TextStyle(color: Colors.white)
+            ),
+            validator: (value) {
+              if (value == null || value.isEmpty) {
+                return 'Please enter age.';
+              }
+
+              if (int.parse(value) < 18){
+                return 'Please enter valid age.';
+              }
+
+              return null;
+            },
+          ),
+          ElevatedButton(
+            onPressed: () {
+              if (_formKey.currentState!.validate()) {
+                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                  content: Text('Colplete'),
+                ));
+              }
+            },
+            child: Text('Validate'),
+          ),
+        ],
       ),
     );
   }
