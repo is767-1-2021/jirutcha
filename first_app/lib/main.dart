@@ -57,17 +57,17 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   
   Image cat = Image.asset(
-  'assets/Image 1.png',
+  'assets/image1.png',
   width: 100,
   );
   
   Image cat1 = Image.asset(
-  'assets/Image 2.png',
+  'assets/image2.png',
   width: 100,
   );
 
   Image cat2 = Image.asset(
-    'assets/Image 1.png',
+    'assets/image1.png',
     width: 100,
   );
 
@@ -386,6 +386,9 @@ class MyCustomForm extends StatefulWidget{
 
 class _MyCustomFormState extends State<MyCustomForm> {
   final _formKey = GlobalKey<FormState>();
+  String? _firstName;
+  String? _lastName;
+  int? _age;
 
   @override
   Widget build(BuildContext context) {
@@ -397,7 +400,8 @@ class _MyCustomFormState extends State<MyCustomForm> {
             decoration: InputDecoration(
               border: UnderlineInputBorder(),
               labelText: 'Enter your firstname',
-              labelStyle: TextStyle(color: Colors.white)
+              labelStyle: TextStyle(color: Colors.white),
+              icon: Icon(Icons.business),
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
@@ -406,12 +410,16 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
               return null;
             },
+            onSaved: (value) {
+              _firstName = value;
+            },
           ),
           TextFormField(
             decoration: InputDecoration(
               border: UnderlineInputBorder(),
               labelText: 'Enter your lastname',
-              labelStyle: TextStyle(color: Colors.white)
+              labelStyle: TextStyle(color: Colors.white),
+              icon: Icon(Icons.family_restroom),
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
@@ -420,12 +428,16 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
               return null;
             },
+            onSaved: (value) {
+              _lastName = value;
+            },
           ),
           TextFormField(
             decoration: InputDecoration(
               border: UnderlineInputBorder(),
               labelText: 'Enter your age',
-              labelStyle: TextStyle(color: Colors.white)
+              labelStyle: TextStyle(color: Colors.white),
+              icon: Icon(Icons.ring_volume),
             ),
             validator: (value) {
               if (value == null || value.isEmpty) {
@@ -438,13 +450,20 @@ class _MyCustomFormState extends State<MyCustomForm> {
 
               return null;
             },
+            onSaved: (value) {
+              _age = int.parse(value!);
+            },
           ),
           ElevatedButton(
             onPressed: () {
               if (_formKey.currentState!.validate()) {
+                _formKey.currentState!.save();
+
                 ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text('Colplete'),
+                  content: Text('Complete = $_firstName $_lastName $_age'),
                 ));
+
+
               }
             },
             child: Text('Validate'),
