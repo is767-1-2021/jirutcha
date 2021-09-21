@@ -66,6 +66,7 @@ class _AddNewCityPageState extends State<AddNewCityPage> {
                     labelText: "City name",
                   ),
                   autofocus: true,
+                  // ignore: deprecated_member_use
                   autovalidate: _formChanged,
                   validator: (String val) {
                     if (val.isEmpty) return "Field cannot be left blank";
@@ -122,6 +123,7 @@ class _AddNewCityPageState extends State<AddNewCityPage> {
                 children: <Widget>[
                   Padding(
                     padding: const EdgeInsets.all(8.0),
+                    // ignore: deprecated_member_use
                     child: FlatButton(
                         textColor: Colors.red[400],
                         child: Text("Cancel"),
@@ -133,6 +135,7 @@ class _AddNewCityPageState extends State<AddNewCityPage> {
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
+                    // ignore: deprecated_member_use
                     child: RaisedButton(
                       color: Colors.blue[400],
                       child: Text("Submit"),
@@ -183,11 +186,13 @@ class _AddNewCityPageState extends State<AddNewCityPage> {
         return AlertDialog(
               content: Text("Are you sure you want to abandon the form? Any changes will be lost."),
               actions: <Widget>[
+                // ignore: deprecated_member_use
                 FlatButton(
                   child: Text("Cancel"),
                   onPressed: () => Navigator.of(context).pop(false),
                   textColor: Colors.black,
                 ),
+                // ignore: deprecated_member_use
                 FlatButton(
                   child: Text("Abandon"),
                   textColor: Colors.red,
