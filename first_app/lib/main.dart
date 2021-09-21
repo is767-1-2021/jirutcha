@@ -1,6 +1,11 @@
-// import 'dart:html';
-
 import 'package:flutter/material.dart';
+
+import 'Pages/fifth_page.dart';
+import 'Pages/first_page.dart';
+import 'Pages/fourth_page.dart';
+import 'Pages/second_page.dart';
+import 'Pages/sixth_page.dart';
+import 'Pages/third_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -57,17 +62,17 @@ class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
   
   Image cat = Image.asset(
-  'assets/image1.png',
+  'assets/Image 1.png',
   width: 100,
   );
   
   Image cat1 = Image.asset(
-  'assets/image2.png',
+  'assets/Image 2.png',
   width: 100,
   );
 
   Image cat2 = Image.asset(
-    'assets/image1.png',
+    'assets/Image 1.png',
     width: 100,
   );
 
@@ -163,313 +168,5 @@ class submitButton extends StatelessWidget {
       print('Pressing'); 
      },
    );
-  }
-}
-
-class FirstPage extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('First Page'),
-        actions: [
-          IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward)),
-          IconButton(onPressed: (){}, icon: Icon(Icons.agriculture)),
-          IconButton(onPressed: (){}, icon: Icon(Icons.bus_alert)),
-          IconButton(onPressed: (){}, icon: Icon(Icons.medication)),
-          IconButton(onPressed: (){}, icon: Icon(Icons.food_bank)),
-        ],
-      ),
-    );
-  }
-} 
-
-class SecondPage extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Second Page'),
-      ),
-      floatingActionButton: FloatingActionButton(
-       child: Icon(Icons.build_sharp), 
-       onPressed: () {},
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              'Here is the text formatted by theme data'
-            ),
-            Table(
-              children: [
-                TableRow(
-                  children: [
-                    Container(
-                      child: Center(child: Text('No.')),
-                      decoration: BoxDecoration(
-                        color: Colors.grey[850],
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                    Container(
-                      child: Center(child: Text('Name')),
-                      decoration: BoxDecoration(
-                        color: Colors.grey[850],
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                    Container(
-                      child: Center(child: Text('Gender')),
-                      decoration: BoxDecoration(
-                        color: Colors.grey[850],
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                    ),
-                  ]
-                ),
-                TableRow(
-                  children: [
-                    Text('1'),
-                    Text('Jirutcha V.'),
-                    Text('Female')
-                  ]
-                ),
-                TableRow(
-                  children: [
-                    Text('2'),
-                    Text('Butter'),
-                    Text('Female')
-                  ],
-                )
-              ],
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class ThirdPage extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return DefaultTabController(
-      initialIndex: 0,
-      length: 3,
-      child: Scaffold(
-        appBar: AppBar(
-          title: Text('Third Page'),
-          bottom: TabBar(
-            tabs: [
-              Tab(
-                icon: Icon(Icons.cloud)
-              ),
-              Tab(
-                icon: Icon(Icons.beach_access_outlined),
-              ),
-              Tab(
-                icon: Icon(Icons.brightness_1_outlined),
-              ),
-            ],
-          ),
-        ),
-        body: TabBarView(
-          children: [
-            Center(
-              child: Text('Cloud',
-              style: TextStyle(height: 1, fontSize: 50),
-              ), 
-           ),
-            Center(
-              child: Text('Umbrella',
-              style: TextStyle(height: 1, fontSize: 50),
-              ),
-            ),
-            Center(
-              child: Text('Sunny',
-              style: TextStyle(height: 1, fontSize: 50),
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class FourthPage extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    final List<String> entries = <String>['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N'];
-    final List<int> colorCodes = <int>[600, 500, 100];
-
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Listview Example'),
-      ),
-      body: ListView.separated(
-        padding: EdgeInsets.all(8.0),
-        itemCount: entries.length,
-        itemBuilder: (context, index) {
-          return Container(
-            height: 50,
-            color: Colors.cyan[colorCodes[index % 3]],
-            child: Center(
-              child: Text('Entry ${entries[index]}',
-              style: TextStyle(color: Colors.black),
-              ),
-            ),
-          );
-        },
-        separatorBuilder: (context, index) => Divider(),
-      ),
-    );
-  }
-}
-
-
-class FifthPage extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Grid View'),
-      ),
-      body: GridView.count(
-        crossAxisCount: 2,
-        children: List.generate(6, (index) {
-          return InkWell(
-            onTap: (){
-              Navigator.pushNamed(context, '/${index+1}');
-              // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              //   content: Text('Tap at $index'),
-              // ));
-            },
-            child: Container(
-              margin: EdgeInsets.all(20.0),
-              decoration: BoxDecoration(
-                color: Theme.of(context).accentColor,
-                borderRadius: BorderRadius.circular(8.0),
-              ),
-              child: Center(
-                child: Text(
-                  'Page ${index+1}',
-                  style: Theme.of(context).textTheme.headline5,
-                ),
-              ),
-            ),
-          );
-        }),
-      ),
-    );
-  }
-}
-
-class SixthPage extends StatelessWidget{
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('First Form'),
-      ),
-      body: MyCustomForm(),
-    );
-  }
-}
-
-class MyCustomForm extends StatefulWidget{
-  @override
-  _MyCustomFormState createState() => _MyCustomFormState();
-}
-
-class _MyCustomFormState extends State<MyCustomForm> {
-  final _formKey = GlobalKey<FormState>();
-  String? _firstName;
-  String? _lastName;
-  int? _age;
-
-  @override
-  Widget build(BuildContext context) {
-    return Form(
-      key: _formKey,
-      child: Column(
-        children: [
-          TextFormField(
-            decoration: InputDecoration(
-              border: UnderlineInputBorder(),
-              labelText: 'Enter your firstname',
-              labelStyle: TextStyle(color: Colors.white),
-              icon: Icon(Icons.business),
-            ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter firstname.';
-              }
-
-              return null;
-            },
-            onSaved: (value) {
-              _firstName = value;
-            },
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              border: UnderlineInputBorder(),
-              labelText: 'Enter your lastname',
-              labelStyle: TextStyle(color: Colors.white),
-              icon: Icon(Icons.family_restroom),
-            ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter lastname.';
-              }
-
-              return null;
-            },
-            onSaved: (value) {
-              _lastName = value;
-            },
-          ),
-          TextFormField(
-            decoration: InputDecoration(
-              border: UnderlineInputBorder(),
-              labelText: 'Enter your age',
-              labelStyle: TextStyle(color: Colors.white),
-              icon: Icon(Icons.ring_volume),
-            ),
-            validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter age.';
-              }
-
-              if (int.parse(value) < 18){
-                return 'Please enter valid age.';
-              }
-
-              return null;
-            },
-            onSaved: (value) {
-              _age = int.parse(value!);
-            },
-          ),
-          ElevatedButton(
-            onPressed: () {
-              if (_formKey.currentState!.validate()) {
-                _formKey.currentState!.save();
-
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text('Complete = $_firstName $_lastName $_age'),
-                ));
-
-
-              }
-            },
-            child: Text('Validate'),
-          ),
-        ],
-      ),
-    );
   }
 }
