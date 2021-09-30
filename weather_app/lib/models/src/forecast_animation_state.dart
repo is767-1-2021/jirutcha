@@ -28,7 +28,7 @@ class ForecastAnimationState {
     var roundedInt = (3 * (hour / 3)).round();
     assert(roundedInt % 3 == 0);
 
-    double cloudOffsetPosition =
+    var cloudOffsetPosition =
         (condition == WeatherDescription.cloudy || condition == WeatherDescription.rain)
             ? 0.0
             : 1.2;

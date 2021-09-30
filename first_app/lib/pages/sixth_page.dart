@@ -1,4 +1,6 @@
+import 'package:first_app/models/first_form_model.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class SixthPage extends StatelessWidget{
   @override
@@ -33,7 +35,6 @@ class _MyCustomFormState extends State<MyCustomForm> {
             decoration: InputDecoration(
               border: UnderlineInputBorder(),
               labelText: 'Enter your firstname',
-              labelStyle: TextStyle(color: Colors.white),
               icon: Icon(Icons.business),
             ),
             validator: (value) {
@@ -46,12 +47,12 @@ class _MyCustomFormState extends State<MyCustomForm> {
             onSaved: (value) {
               _firstName = value;
             },
+            initialValue: context.read<FirstFormModel>().firstName,
           ),
           TextFormField(
             decoration: InputDecoration(
               border: UnderlineInputBorder(),
               labelText: 'Enter your lastname',
-              labelStyle: TextStyle(color: Colors.white),
               icon: Icon(Icons.family_restroom),
             ),
             validator: (value) {
@@ -64,12 +65,12 @@ class _MyCustomFormState extends State<MyCustomForm> {
             onSaved: (value) {
               _lastName = value;
             },
+            initialValue: context.read<FirstFormModel>().lastName,
           ),
           TextFormField(
             decoration: InputDecoration(
               border: UnderlineInputBorder(),
               labelText: 'Enter your age',
-              labelStyle: TextStyle(color: Colors.white),
               icon: Icon(Icons.ring_volume),
             ),
             validator: (value) {
@@ -86,17 +87,18 @@ class _MyCustomFormState extends State<MyCustomForm> {
             onSaved: (value) {
               _age = int.parse(value!);
             },
+            initialValue: context.read<FirstFormModel>().age.toString(),
           ),
           ElevatedButton(
             onPressed: () {
               if (_formKey.currentState!.validate()) {
                 _formKey.currentState!.save();
 
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                  content: Text('Complete = $_firstName $_lastName $_age'),
-                ));
+                context.read<FirstFormModel>().firstName = _firstName;
+                context.read<FirstFormModel>().lastName = _lastName;
+                context.read<FirstFormModel>().age = _age;
 
-
+                Navigator.pop(context);
               }
             },
             child: Text('Validate'),

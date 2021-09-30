@@ -66,7 +66,7 @@ class SettingsPageState extends State<SettingsPage> {
             Divider(),
             ListTile(
               leading: Icon(Icons.add),
-              title: Text("Add new city"),
+              title: Text('Add new city'),
               onTap: () {
                 Navigator.of(context).push(
                   MaterialPageRoute(
@@ -89,8 +89,8 @@ class SettingsPageState extends State<SettingsPage> {
                     onDismissed: (DismissDirection dir) => _handleDismiss(dir, city),
                     confirmDismiss: (DismissDirection dir) async => dir == DismissDirection.endToStart,
                     background: Container(
-                      child: Icon(Icons.delete_forever),
                       decoration: BoxDecoration(color: Colors.red[700]),
+                      child: Icon(Icons.delete_forever),
                     ),
                     key: ValueKey(city),
                     child: CheckboxListTile(

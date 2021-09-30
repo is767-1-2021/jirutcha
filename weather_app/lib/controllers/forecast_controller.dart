@@ -7,8 +7,8 @@ class ForecastController {
   Forecast forecast;
   ForecastDay selectedDay;
   Weather selectedHourlyTemperature;
-  DateTime _today = DateTime.now();
-  WeatherDataRepository _repository = WeatherDataRepository();
+  final DateTime _today = DateTime.now();
+  final WeatherDataRepository _repository = WeatherDataRepository();
 
   ForecastController(this._city) {
     init();
@@ -21,6 +21,7 @@ class ForecastController {
     init();
   }
 
+  // ignore: always_declare_return_types
   init() {
     forecast = _repository.getTenDayForecast(city);
     selectedDay = Forecast.getSelectedDayForecast(

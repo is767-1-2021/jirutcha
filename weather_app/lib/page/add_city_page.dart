@@ -15,7 +15,7 @@ class AddNewCityPage extends StatefulWidget {
 }
 
 class _AddNewCityPageState extends State<AddNewCityPage> {
-  City _newCity = City.fromUserInput();
+  final City _newCity = City.fromUserInput();
   bool _formChanged = false;
   bool _isDefaultFlag = false;
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
@@ -43,7 +43,7 @@ class _AddNewCityPageState extends State<AddNewCityPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          "Add City",
+          'Add City',
           style: TextStyle(color: AppColor.textColorLight),
         ),
       ),
@@ -62,14 +62,14 @@ class _AddNewCityPageState extends State<AddNewCityPage> {
                   onSaved: (String val) => _newCity.name = val,
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    helperText: "Required",
-                    labelText: "City name",
+                    helperText: 'Required',
+                    labelText: 'City name',
                   ),
                   autofocus: true,
                   // ignore: deprecated_member_use
                   autovalidate: _formChanged,
                   validator: (String val) {
-                    if (val.isEmpty) return "Field cannot be left blank";
+                    if (val.isEmpty) return 'Field cannot be left blank';
                     return null;
                   },
                 ),
@@ -81,12 +81,12 @@ class _AddNewCityPageState extends State<AddNewCityPage> {
                   onSaved: (String val) => print(val),
                   decoration: InputDecoration(
                     border: OutlineInputBorder(),
-                    helperText: "Optional",
-                    labelText: "State or Territory name",
+                    helperText: 'Optional',
+                    labelText: 'State or Territory name',
                   ),
                   validator: (String val) {
                     if (val.isEmpty) {
-                      return "Field cannot be left blank";
+                      return 'Field cannot be left blank';
                     }
                     return null;
                   },
@@ -104,7 +104,7 @@ class _AddNewCityPageState extends State<AddNewCityPage> {
                   return Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
-                      Text("Default city?"),
+                      Text('Default city?'),
                       Checkbox(
                         value: _isDefaultFlag,
                         onChanged: (val) {
@@ -126,19 +126,18 @@ class _AddNewCityPageState extends State<AddNewCityPage> {
                     // ignore: deprecated_member_use
                     child: FlatButton(
                         textColor: Colors.red[400],
-                        child: Text("Cancel"),
                         onPressed: () async {
                           if (await _onWillPop()) {
                             Navigator.of(context).pop(false);
                           }
-                        }),
+                        },
+                        child: Text('Cancel')),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     // ignore: deprecated_member_use
                     child: RaisedButton(
                       color: Colors.blue[400],
-                      child: Text("Submit"),
                       onPressed: _formChanged
                           ? () {
                               if (_formKey.currentState.validate()) {
@@ -150,6 +149,7 @@ class _AddNewCityPageState extends State<AddNewCityPage> {
                               }
                             }
                           : null,
+                      child: Text('Submit'),
                     ),
                   )
                 ],
@@ -184,19 +184,19 @@ class _AddNewCityPageState extends State<AddNewCityPage> {
       context: context,
       builder: (BuildContext context) {
         return AlertDialog(
-              content: Text("Are you sure you want to abandon the form? Any changes will be lost."),
+              content: Text('Are you sure you want to abandon the form? Any changes will be lost.'),
               actions: <Widget>[
                 // ignore: deprecated_member_use
                 FlatButton(
-                  child: Text("Cancel"),
                   onPressed: () => Navigator.of(context).pop(false),
                   textColor: Colors.black,
+                  child: Text('Cancel'),
                 ),
                 // ignore: deprecated_member_use
                 FlatButton(
-                  child: Text("Abandon"),
                   textColor: Colors.red,
                   onPressed: () => Navigator.pop(context, true),
+                  child: Text('Abandon'),
                 ),
               ],
             ) ??

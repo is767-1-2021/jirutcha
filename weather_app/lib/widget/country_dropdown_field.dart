@@ -20,7 +20,7 @@ class CountryDropdownField extends StatelessWidget {
         isExpanded: true,
         decoration: InputDecoration(
           border: OutlineInputBorder(),
-          labelText: "Country",
+          labelText: 'Country',
         ),
         value: country ?? Country.AD,
         onChanged: (Country newSelection) => onChanged(newSelection),

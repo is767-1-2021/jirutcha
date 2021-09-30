@@ -43,9 +43,13 @@ class ForecastTableView extends StatelessWidget {
         },
         defaultVerticalAlignment: TableCellVerticalAlignment.middle,
         children: List.generate(7, (int index) {
-          ForecastDay day = forecast.days[index];
-          Weather dailyWeather = forecast.days[index].hourlyWeather[0];
+          var va;
+          va
+          
+          ;
+          var dailyWeather = forecast.days[index].hourlyWeather[0];
           var weatherIcon = _getWeatherIcon(dailyWeather);
+          var day;
           return TableRow(
             children: [
               TableCell(

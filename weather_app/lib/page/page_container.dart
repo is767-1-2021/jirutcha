@@ -57,12 +57,12 @@ class _PageContainerState extends State<PageContainer> {
       ),
       // ignore: deprecated_member_use
       settingsButton: FlatButton(
+          onPressed: _showSettingsPage,
           child: Text(
             AnimationUtil.temperatureLabels[settings.selectedTemperature],
             // ignore: deprecated_member_use
             style: Theme.of(context).textTheme.headline,
-          ),
-          onPressed: _showSettingsPage),
+          )),
       settings: settings,
     );
   }

@@ -6,11 +6,11 @@ import 'forecast_animation_utils.dart';
 /// This class is used to turn enum values, date times, etc into human-readable Strings
 class Humanize {
   static List<String> enumValues(List<dynamic> values) {
-    return values.map((u) => u.toString().split(".")[1]).toList();
+    return values.map((u) => u.toString().split('.')[1]).toList();
   }
 
   static String singleEnumValue(dynamic value) {
-    return value.toString().split(".").last;
+    return value.toString().split('.').last;
   }
 
   static String currentTemperature(TemperatureUnit unit, Weather temp) {
@@ -24,7 +24,7 @@ class Humanize {
   static String weatherDescription(Weather weather) {
     var day = MyDateUtils.weekdays[weather.dateTime.weekday];
     var description = Weather.displayValues[weather.description];
-    return "$day. ${description.replaceFirst(description[0], description[0].toUpperCase())}.";
+    return '$day. ${description.replaceFirst(description[0], description[0].toUpperCase())}.';
   }
 
   static List<String> allHours() {

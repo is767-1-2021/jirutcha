@@ -14,8 +14,8 @@ class AnimationUtil {
   };
 
   static Map<TemperatureUnit, String> temperatureLabels = {
-    TemperatureUnit.celsius: "°C",
-    TemperatureUnit.fahrenheit: "°F",
+    TemperatureUnit.celsius: '°C',
+    TemperatureUnit.fahrenheit: '°F',
   };
 
   static ForecastAnimationState getDataForNextAnimationState({

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class SegmentedControl extends StatefulWidget {
+  @override
   final Key key;
   final List<String> segments;
   final onSelectionChanged;
@@ -23,6 +24,7 @@ class _SegmentedControlState extends State<SegmentedControl> {
   _SegmentedControlState();
   int selectedIndex;
 
+  // ignore: always_declare_return_types
   handleSelect(int widgetNum) {
     setState(() => selectedIndex = widgetNum);
     widget.onSelectionChanged(widgetNum);
@@ -42,13 +44,13 @@ class _SegmentedControlState extends State<SegmentedControl> {
     }
     var lastSegment = widget.segments?.last;
     if (lastSegment == null) return [];
-    List<Color> childBorders = [];
+    var childBorders = <Color>[];
 
     var selectedIndex = this.selectedIndex ?? widget.initialSelectionIndex;
 
-    List<Widget> segmentWidgets = [];
+    var segmentWidgets = <Widget>[];
     widget.segments.forEach((segment) {
-      int idx = widget.segments.indexOf(segment);
+      var idx = widget.segments.indexOf(segment);
 
       if (segment == lastSegment) {
         childBorders.add(Colors.transparent);

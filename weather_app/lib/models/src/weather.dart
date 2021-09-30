@@ -46,10 +46,10 @@ class Weather {
       this.weatherIcon});
 
   static Map<WeatherDescription, String> displayValues = {
-    WeatherDescription.clear: "Clear",
-    WeatherDescription.cloudy: "Cloudy",
-    WeatherDescription.rain: "Rain",
-    WeatherDescription.sunny: "Sunny",
+    WeatherDescription.clear: 'Clear',
+    WeatherDescription.cloudy: 'Cloudy',
+    WeatherDescription.rain: 'Rain',
+    WeatherDescription.sunny: 'Sunny',
   };
 }
 
