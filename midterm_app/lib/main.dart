@@ -1,11 +1,26 @@
-import 'package:flutter/material.dart';
 
-import 'Pages/MainPage.dart';
-import 'Pages/FirstPage.dart';
-import 'Pages/SecondPage.dart';
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'Pages/fifth_page.dart';
+import 'Pages/first_page.dart';
+import 'Pages/fourth_page.dart';
+import 'Pages/second_page.dart';
+import 'Pages/sixth_page.dart';
+import 'Pages/third_page.dart';
+import 'models/first_form_model.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => FirstFormModel(),
+        ),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -24,11 +39,14 @@ class MyApp extends StatelessWidget {
           bodyText2: TextStyle(color: Colors.cyanAccent),
         ),
       ),
-      initialRoute: '/1',
+      initialRoute: '/5',
       routes: <String, WidgetBuilder> {
-        '/1': (context) => MainPage(),
-        '/2': (context) => FirstPage(),
-        '/3': (context) => SecondPage(),
+        '/1': (context) => FirstPage(),
+        '/2': (context) => SecondPage(),
+        '/3': (context) => ThirdPage(),
+        '/4': (context) => FourthPage(),
+        '/5': (context) => FifthPage(),
+        '/6': (context) => SixthPage(),
       }
     );
   }

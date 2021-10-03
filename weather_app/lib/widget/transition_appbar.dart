@@ -18,7 +18,12 @@ class TransitionAppbar extends AnimatedWidget {
     final Animation<Color> animation = listenable;
     return AppBar(
       backgroundColor: animation.value,
-      leading: 
-    );
-  }
+      leading:
+
+  };
+    )
 }
+
+
+    
+  
