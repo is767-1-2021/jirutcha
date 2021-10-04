@@ -14,7 +14,7 @@ class _FirstPageState extends State<DataDisplay> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('First Page'),
+        title: Text('Welcome'),
         actions: [
           IconButton(onPressed: (){}, icon: Icon(Icons.arrow_forward)),
           IconButton(onPressed: (){}, icon: Icon(Icons.agriculture)),
