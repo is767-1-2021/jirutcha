@@ -1,7 +1,9 @@
-import 'package:midterm_app/models/first_form_model.dart';
-import 'package:midterm_app/pages/second_page.dart';
+import 'package:team_app/Pages/input_data.dart';
 import 'package:flutter/material.dart';
+import 'package:team_app/models/first_form_model.dart';
 import 'package:provider/provider.dart';
+
+import 'input_data.dart';
 
 class DataDisplay extends StatefulWidget{
   @override
@@ -22,7 +24,7 @@ class _FirstPageState extends State<DataDisplay> {
             onPressed: (){
               Navigator.push(context, 
                 MaterialPageRoute(
-                  builder: (context) => SecondPage(),
+                  builder: (context) => InputData(),
                 ),
               );
             }, 

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:midterm_app/Pages/exercise_history.dart';
-import 'package:midterm_app/Pages/input_data.dart';
-import 'package:midterm_app/Pages/data_display.dart';
+import 'package:team_app/Pages/data_display.dart';
+import 'package:team_app/Pages/exercise_history.dart';
+import 'package:team_app/Pages/input_data.dart';
 
 class HomePage extends StatelessWidget{
   @override
