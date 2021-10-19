@@ -9,7 +9,7 @@ class FifthPage extends StatelessWidget{
       ),
       body: GridView.count(
         crossAxisCount: 2,
-        children: List.generate(7, (index) {
+        children: List.generate(8, (index) {
           return InkWell(
             onTap: (){
               Navigator.pushNamed(context, '/${index+1}');
