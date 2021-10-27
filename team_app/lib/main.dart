@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:meditation_app/constants.dart';
-import 'package:meditation_app/screens/details_screen.dart';
-import 'package:meditation_app/widgets/bottom_nav_bar.dart';
-import 'package:meditation_app/widgets/category_card.dart';
-import 'package:meditation_app/widgets/search_bar.dart';
+import 'package:team_app/constants.dart';
+import 'package:team_app/screens/details_screen.dart';
+import 'package:team_app/widgets/bottom_nav_bar.dart';
+import 'package:team_app/widgets/category_card.dart';
+import 'package:team_app/widgets/search_bar.dart';
 
 import 'exercise screens/running_screen.dart';
 import 'exercise screens/swimming_screen.dart';
@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Meditation App',
+      title: 'Team App',
       theme: ThemeData(
         fontFamily: "Cairo",
         scaffoldBackgroundColor: kBackgroundColor,

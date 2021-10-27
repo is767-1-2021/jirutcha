@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:meditation_app/widgets/bottom_nav_bar.dart';
-import 'package:meditation_app/widgets/category_card.dart';
-import 'package:meditation_app/widgets/search_bar.dart';
+import 'package:team_app/widgets/bottom_nav_bar.dart';
+import 'package:team_app/widgets/category_card.dart';
+import 'package:team_app/widgets/search_bar.dart';
 
 class SwimmingScreen extends StatelessWidget {
   @override

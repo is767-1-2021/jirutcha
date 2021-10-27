@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:meditation_app/constants.dart';
-import 'package:meditation_app/widgets/bottom_nav_bar.dart';
-import 'package:meditation_app/widgets/search_bar.dart';
+import 'package:team_app/constants.dart';
+import 'package:team_app/widgets/bottom_nav_bar.dart';
+import 'package:team_app/widgets/search_bar.dart';
 
 class DetailsScreen extends StatelessWidget {
   @override

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:meditation_app/constants.dart';
+import 'package:team_app/constants.dart';
 
 class CategoryCard extends StatelessWidget {
   final String svgSrc;

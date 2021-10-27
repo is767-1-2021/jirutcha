@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:meditation_app/constants.dart';
-import 'package:meditation_app/main.dart';
+import 'package:team_app/constants.dart';
+import 'package:team_app/main.dart';
 
 class BottomNavBar extends StatelessWidget {
   const BottomNavBar({
