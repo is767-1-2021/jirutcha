@@ -168,7 +168,7 @@ class _SelectExerciseState extends State<SelectExercise> {
                 itemCount: widget.selectedDayExerciseList.length,
                 shrinkWrap: true,
                 itemBuilder: (context, index) {
-                  return selectedExerciseCell(widget.selectedDayExerciseList[index]);
+                  return selectedExerciseCell(widget.selectedDayExerciseList[index], index);
                 })
               ),
             )
@@ -211,7 +211,7 @@ class _SelectExerciseState extends State<SelectExercise> {
     );
   }
 
-  Widget selectedExerciseCell(Exercise exercise){
+  Widget selectedExerciseCell(Exercise exercise, int index){
     return Container(
       padding: EdgeInsets.symmetric(vertical: 5, horizontal: 10),
       decoration: BoxDecoration(
@@ -220,12 +220,25 @@ class _SelectExerciseState extends State<SelectExercise> {
       ),
       child: ListTile(
         contentPadding: EdgeInsets.all(0),
-        title: Text(
-          '${exercise.exerciseName}',
-          style: TextStyle(
-            fontSize: SizeConfig.fontSize * 2.2,
-            fontWeight: FontWeight.w500
-          ),
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(
+              '${exercise.exerciseName}',
+              style: TextStyle(
+                fontSize: SizeConfig.fontSize * 2.2,
+                fontWeight: FontWeight.w500
+              ),
+            ),
+            GestureDetector(
+              onTap: () async {
+                widget.selectedDayExerciseList.removeAt(index);
+                setState(() {});
+                await Exercise.saveExercisesForDate(widget.selectedDate, widget.selectedDayExerciseList); 
+              },
+              child: Icon(Icons.remove_circle, color: Colors.red,)
+            )
+          ],
         ),
         subtitle: Container(
           margin: EdgeInsets.only(top: 5),
