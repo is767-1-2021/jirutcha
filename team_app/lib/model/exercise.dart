@@ -77,5 +77,5 @@ class Exercise{
       savedListForDate.add(exercise);
     }
     return savedListForDate;
-  }
+  } 
 }
