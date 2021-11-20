@@ -1,4 +1,5 @@
 import 'package:exercise_app/model/exercise.dart';
+import 'package:exercise_app/services/app_controller.dart';
 import 'package:exercise_app/utils/constants.dart';
 import 'package:exercise_app/utils/size_config.dart';
 import 'package:flutter/material.dart';
@@ -35,6 +36,7 @@ class _AddCustomExerciseState extends State<AddCustomExercise> {
       setState(() {});
     }
   }
+  
 
   void saveExercise(){
     int totalMinutes = (timeUser!.hour * 60) + timeUser!.minute;
@@ -48,6 +50,7 @@ class _AddCustomExerciseState extends State<AddCustomExercise> {
     customExercise.userTimeMinutesSelected = totalMinutes;
     customExercise.userTimeSelected = (timeUser!.minute >0) ? "${timeUser!.hour}:${timeUser!.minute}" : "${timeUser!.hour}";
     customExercise.userTimeBasedCalories = (customExercise.userTimeMinutesSelected * customExercise.caloriesPerMinute).toInt();
+    AppController().addExercise(customExercise.exerciseId, customExercise.exerciseName, customExercise.caloriesPerMinute);
     Get.back(result: customExercise);
   }
 
