@@ -1,0 +1,227 @@
+{
+  "project_info": {
+    "project_number": "818638033842",
+    "firebase_url": "https://is767-2021-ondiet-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "is767-2021-ondiet",
+    "storage_bucket": "is767-2021-ondiet.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818638033842:android:a03a74d37cdc168cf18aab",
+        "android_client_info": {
+          "package_name": "com.example.first_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818638033842-hujv9odbdvkj0rvlc518sl67egf0ub23.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWHsos8W2x0m_6OnFRUmpeKzCrWUWmbuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818638033842-hujv9odbdvkj0rvlc518sl67egf0ub23.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "818638033842-4cffai5gchfpkn9v8a0s9iesu48592lt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.msmistu15.ondiet"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818638033842:android:41cb55d61e9c7c65f18aab",
+        "android_client_info": {
+          "package_name": "com.example.firstapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818638033842-hujv9odbdvkj0rvlc518sl67egf0ub23.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWHsos8W2x0m_6OnFRUmpeKzCrWUWmbuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818638033842-hujv9odbdvkj0rvlc518sl67egf0ub23.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "818638033842-4cffai5gchfpkn9v8a0s9iesu48592lt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.msmistu15.ondiet"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818638033842:android:9449a9e75ad51448f18aab",
+        "android_client_info": {
+          "package_name": "com.example.team_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818638033842-hujv9odbdvkj0rvlc518sl67egf0ub23.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWHsos8W2x0m_6OnFRUmpeKzCrWUWmbuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818638033842-hujv9odbdvkj0rvlc518sl67egf0ub23.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "818638033842-4cffai5gchfpkn9v8a0s9iesu48592lt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.msmistu15.ondiet"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818638033842:android:4ba0ebe9d5b8293ff18aab",
+        "android_client_info": {
+          "package_name": "com.example.todo_app_firestore_example"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818638033842-hujv9odbdvkj0rvlc518sl67egf0ub23.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWHsos8W2x0m_6OnFRUmpeKzCrWUWmbuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818638033842-hujv9odbdvkj0rvlc518sl67egf0ub23.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "818638033842-4cffai5gchfpkn9v8a0s9iesu48592lt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.msmistu15.ondiet"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818638033842:android:65d9365b0b3c25c8f18aab",
+        "android_client_info": {
+          "package_name": "com.exercise.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818638033842-hujv9odbdvkj0rvlc518sl67egf0ub23.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWHsos8W2x0m_6OnFRUmpeKzCrWUWmbuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818638033842-hujv9odbdvkj0rvlc518sl67egf0ub23.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "818638033842-4cffai5gchfpkn9v8a0s9iesu48592lt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.msmistu15.ondiet"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:818638033842:android:01ac9e0202181e2af18aab",
+        "android_client_info": {
+          "package_name": "com.exercise.menu"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "818638033842-hujv9odbdvkj0rvlc518sl67egf0ub23.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBWHsos8W2x0m_6OnFRUmpeKzCrWUWmbuY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "818638033842-hujv9odbdvkj0rvlc518sl67egf0ub23.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "818638033842-4cffai5gchfpkn9v8a0s9iesu48592lt.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.msmistu15.ondiet"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
