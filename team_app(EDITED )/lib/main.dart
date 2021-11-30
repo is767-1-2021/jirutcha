@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
         primaryColor: Color (0xFFC3DEB6),          //Appbar
         scaffoldBackgroundColor: Color (0xFFFFFFFF)//Background
       ),
-      home: MyHomePage(),
+      home: FoodPage(),
     );
   }
 }
